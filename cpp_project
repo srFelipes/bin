@@ -1,0 +1,14 @@
+#!/bin/bash
+mkdir $1
+cd $1
+mkdir src
+mkdir include
+mkdir scripts
+mkdir test
+touch src/$1.cpp
+touch include/$1.hpp
+touch scripts/main.cpp
+touch test/main.cpp
+cp ~/bin/files/CMakeLists.txt CMakeLists.txt
+sed -i -e "s/\[project_name\]/$1/g" CMakeLists.txt
+cp ~/bin/files/cpp_ignore .gitignore
