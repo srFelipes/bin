@@ -1,4 +1,21 @@
 #!/bin/bash
+show_help() {
+  echo "Usage: $(basename $0) <project_name>"
+  echo "<project_name> is the name of the project you want to create"
+  echo "  -h, --help     Display this help message"
+  # Add more options and descriptions as needed
+  exit 0
+}
+
+if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+  show_help
+fi
+
+if [[ -z "$1" ]]; then
+  echo "Error: <project_name> is required."
+  show_help
+fi
+
 mkdir $1
 cd $1
 mkdir src
