@@ -22,5 +22,5 @@ mkdir src
 mkdir test
 mkdir scripts
 python3 -m venv env
-. $1/bin/activate
+. env/bin/activate
 cp ~/bin/files/python_ignore .gitignore
